@@ -94,7 +94,7 @@ filetype plugin indent on
 set autoread
 
 " Use colorscheme
-colorscheme Glowfish
+colorscheme kolor
 
 " Use (ctrl-n) for NERDTree
 map <C-n> :NERDTreeToggle<CR>
