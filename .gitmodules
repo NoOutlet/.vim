@@ -6,7 +6,7 @@
 	url = git@github.com:scrooloose/nerdtree.git
 [submodule "bundle/mustache"]
 	path = bundle/mustache
-	url = git://github.com/mustache/vim-mustache-handlebars.git
+	url = git@github.com:mustache/vim-mustache-handlebars.git
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = git@github.com:plasticboy/vim-markdown.git
