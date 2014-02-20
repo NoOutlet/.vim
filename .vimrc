@@ -71,6 +71,9 @@ set number
 " Show relative number lines
 " set relativenumber
 
+" Backspace deletes carriage returns
+set backspace=2
+
 " Toggle Paste mode with <F2>
 set pastetoggle=<F2>
 
