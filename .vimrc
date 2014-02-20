@@ -25,7 +25,6 @@ set wrap "Wrap lines
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
-set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -93,11 +92,14 @@ filetype plugin indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Use kolor colorscheme
+" Use zenburn colorscheme
 colorscheme zenburn
 
-" Use (ctrl-n) for NERDTree
+" Toggle NERDTree with <Ctrl+n>
 map <C-n> :NERDTreeToggle<CR>
+
+" Quit NERDTree when opening a file
+let NERDTreeQuitOnOpen=1
 
 " Open NERDTree if not editing specific file
 autocmd vimenter * if !argc() | NERDTree | endif
