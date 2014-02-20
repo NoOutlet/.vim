@@ -25,7 +25,6 @@ set wrap "Wrap lines
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
-set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -72,6 +71,9 @@ set number
 " Show relative number lines
 " set relativenumber
 
+" Backspace deletes carriage returns
+set backspace=2
+
 " Toggle Paste mode with <F2>
 set pastetoggle=<F2>
 
@@ -96,8 +98,9 @@ set autoread
 " Use colorscheme
 colorscheme kolor
 
-" Use (ctrl-n) for NERDTree
+" Toggle NERDTree with Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 " Open NERDTree if not editing specific file
 autocmd vimenter * if !argc() | NERDTree | endif
