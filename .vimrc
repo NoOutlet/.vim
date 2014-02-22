@@ -95,11 +95,13 @@ filetype plugin indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Use colorscheme
-colorscheme kolor
+" Use zenburn colorscheme
+colorscheme zenburn
 
-" Toggle NERDTree with Ctrl-n
+" Toggle NERDTree with <Ctrl+n>
 map <C-n> :NERDTreeToggle<CR>
+
+" Quit NERDTree when opening a file
 let NERDTreeQuitOnOpen=1
 
 " Open NERDTree if not editing specific file
