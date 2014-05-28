@@ -95,8 +95,8 @@ filetype plugin indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Use zenburn colorscheme
-colorscheme zenburn
+" Use kolor colorscheme
+colorscheme kolor
 
 " Toggle NERDTree with <Ctrl+n>
 map <C-n> :NERDTreeToggle<CR>
