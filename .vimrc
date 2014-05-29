@@ -114,5 +114,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jshint']
 
 " Map Ctrl+J and Ctrl+K to next/prev item in location list
-:map <C-J> :lnext<CR>
-:map <C-K> :lprev<CR>
+map <C-J> :lnext<CR>
+imap <C-J> <ESC>:lnext<CR>i
+map <C-K> :lprev<CR>
+imap <C-K> <ESC>:lprev<CR>i
