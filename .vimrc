@@ -95,8 +95,8 @@ filetype plugin indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Use zenburn colorscheme
-colorscheme zenburn
+" Set color in an ignored file so different systems can have different schemes
+:so ${HOME}/.vim/.vimcolor
 
 " Toggle NERDTree with <Ctrl+n>
 map <C-n> :NERDTreeToggle<CR>
@@ -106,3 +106,13 @@ let NERDTreeQuitOnOpen=1
 
 " Open NERDTree if not editing specific file
 autocmd vimenter * if !argc() | NERDTree | endif
+
+" Configs for Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jshint']
+
+" Map Ctrl+J and Ctrl+K to next/prev item in location list
+:map <C-J> :lnext<CR>
+:map <C-K> :lprev<CR>
