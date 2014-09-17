@@ -118,3 +118,4 @@ map <C-J> :lnext<CR>
 imap <C-J> <ESC>:lnext<CR>i
 map <C-K> :lprev<CR>
 imap <C-K> <ESC>:lprev<CR>i
+nnoremap <C-E> @q
