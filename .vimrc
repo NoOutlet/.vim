@@ -113,6 +113,10 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jshint']
 
+" Map Alt+b to use git-time-lapse
+map <C-L> :call TimeLapse()<CR>
+map <C-S> :tabclose<CR>
+
 " Map Ctrl+J and Ctrl+K to next/prev item in location list
 map <C-J> :lnext<CR>
 imap <C-J> <ESC>:lnext<CR>i
