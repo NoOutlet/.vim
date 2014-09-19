@@ -46,6 +46,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule "bundle/git-time-lapse/plugin"]
-	path = bundle/git-time-lapse/plugin
-	url = http://www.tidraso.co.uk/repository/vim-plugin/
+[submodule "bundle/fugit"]
+	path = bundle/fugit
+	url = git@github.com:NoOutlet/fugit.git
