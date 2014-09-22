@@ -46,6 +46,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule "bundle/fugit"]
-	path = bundle/fugit
-	url = git@github.com:NoOutlet/fugit.git
+[submodule "bundle/fuhgit"]
+	path = bundle/fuhgit
+	url = git@github.com:NoOutlet/fuhgit.git
