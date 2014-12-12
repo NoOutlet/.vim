@@ -49,3 +49,6 @@
 [submodule "bundle/fuhgit"]
 	path = bundle/fuhgit
 	url = https://github.com/NoOutlet/fuhgit.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git

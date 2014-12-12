@@ -39,7 +39,7 @@ set ruler
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -123,3 +123,8 @@ imap <C-J> <ESC>:lnext<CR>i
 map <C-K> :lprev<CR>
 imap <C-K> <ESC>:lprev<CR>i
 nnoremap <C-E> @q
+
+" Let vim-airline take care of showing the mode
+set noshowmode
+" Try showing airline symbols
+let g:airline_powerline_fonts = 1
