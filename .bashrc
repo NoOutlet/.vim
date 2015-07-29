@@ -92,6 +92,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ack='ack-grep'
+alias hack='history | ack-grep'
+alias pack='ps aux | ack-grep'
+alias pi='ssh osmc@osmc'
+alias powerlinefonts='wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf && wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf && sudo mv PowerlineSymbols.otf /usr/share/fonts/PowerlineSymbols.otf && sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/10-powerline-symbols.conf && sudo fc-cache -vf'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
