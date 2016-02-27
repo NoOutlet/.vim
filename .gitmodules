@@ -55,3 +55,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "bundle/python-syntax"]
+	path = bundle/python-syntax
+	url = https://github.com/hdima/python-syntax.git

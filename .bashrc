@@ -94,7 +94,7 @@ alias l='ls -CF'
 alias ack='ack-grep'
 alias hack='history | ack-grep'
 alias pack='ps aux | ack-grep'
-alias pi='ssh osmc@osmc'
+alias pi='ssh osmc@cotterpin -p 49'
 alias powerlinefonts='wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf && wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf && sudo mv PowerlineSymbols.otf /usr/share/fonts/PowerlineSymbols.otf && sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/10-powerline-symbols.conf && sudo fc-cache -vf'
 alias py3server='python3 -m http.server'
 
@@ -108,6 +108,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 alias vi='vim'
+alias nv='nvim'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
