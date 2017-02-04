@@ -44,6 +44,11 @@ case "$TERM" in
   xterm-color) color_prompt=yes;;
 esac
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -205,3 +210,9 @@ cb() {
 
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
+
+export NVM_DIR="/home/squiggs/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
