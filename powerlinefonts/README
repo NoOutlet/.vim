@@ -1,0 +1,6 @@
+This README attempts to give a clue as to how to get powerline fonts to work for vim-airline.
+These commands do not work on every system, but they do seem effective on debian based distributions.
+
+sudo mv PowerlineSymbols.otf /usr/share/fonts/PowerlineSymbols.otf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/10-powerline-symbols.conf
+sudo fc-cache -vf

@@ -103,8 +103,6 @@ alias l='ls -CF'
 alias ack='ack-grep'
 alias hack='history | ack-grep'
 alias pack='ps aux | ack-grep'
-alias pi='ssh osmc@cotterpin'
-alias powerlinefonts='wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf && wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf && sudo mv PowerlineSymbols.otf /usr/share/fonts/PowerlineSymbols.otf && sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/10-powerline-symbols.conf && sudo fc-cache -vf'
 alias py3server='python3 -m http.server'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -210,9 +208,3 @@ cb() {
 
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
-
-export NVM_DIR="/home/squiggs/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
