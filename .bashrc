@@ -39,6 +39,10 @@ if [ "$COLORTERM" == "xfce4-terminal" ] ; then
   export TERM=xterm-256color
 fi
 
+if [ "$COLORTERM" == "gnome-terminal" ] ; then
+  export TERM=xterm-256color
+fi
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
   xterm-color) color_prompt=yes;;
@@ -51,7 +55,12 @@ fi
 
 # set PATH so it includes node bin if it exists
 if [ -d "$HOME/Applications/node/bin" ] ; then
-    PATH="$HOME/Applications/node/bin:$PATH"
+  PATH="$HOME/Applications/node/bin:$PATH"
+fi
+
+# set PATH so it includes user's npm bin if it exists
+if [ -d "$HOME/npm/bin" ] ; then
+  PATH="$HOME/npm/bin:$PATH"
 fi
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -154,7 +163,7 @@ do
   p=${p#*/}
   ((s=${#b}+${#p}))
 done
-p="${b/\/~/\~}${b+/}$p"
+p=${b/\/~/\~}${b+/}$p
 
 # Display user@hostname:pwd process
 echo -ne "\033]0;${USER}@${HOSTNAME}: ${p}\007"
