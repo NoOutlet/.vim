@@ -114,10 +114,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ack='ack-grep'
-alias hack='history | ack-grep'
-alias pack='ps aux | ack-grep'
-alias py3server='python3 -m http.server'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

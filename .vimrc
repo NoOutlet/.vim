@@ -123,6 +123,7 @@ imap <C-J> <ESC>:lnext<CR>i
 map <C-K> :lprev<CR>
 imap <C-K> <ESC>:lprev<CR>i
 nnoremap <C-E> @q
+nnoremap <CR> :noh<CR><CR>
 
 " Let vim-airline take care of showing the mode
 set noshowmode
