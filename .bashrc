@@ -19,6 +19,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# Use neovim or vim
+EDITOR='vi'
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -123,9 +126,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-alias vi='vim'
-alias nv='nvim'
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
