@@ -166,22 +166,25 @@ echo -ne "\033]0;${USER}@${HOSTNAME}: ${p}\007"
 # Fill in a git status data if in git repo
 mapfile -t l < <(git status --porcelain -b 2> /dev/null)
 # branch, commits ahead, commits behind, uncommitted changes indicator, untracked files, indicator color, untracked color
-local br="" la="" lb="" lc="" ln="" st='0' nt='0' i
+local br="" la="" lb="" lc="" ld="" ln="" st='0' nt='0' dt='0' i
 if [ ${#l} != '0' ]; then
   br=${l[0]:3} && br=${br%...*}
   la=${l[0]#*[ahead } && la=${la%% *} && [[ ${la:(-1)} != '#' ]] && la=${la:0:${#la}-1} || la=""
   lb=${l[0]#*behind } && lb=${lb%% *} && [[ ${lb:(-1)} != '#' ]] && lb=${lb:0:${#lb}-1} || lb=""
   st='36'
   nt='36'
+  dt='36'
   for i in "${l[@]:1}"; do
     [[ "$lc" = '∂' || ${i:0:1} == 'M' || ${i:1:1} == 'M' ]] && lc='∂'
-    [[ "$st" = '31' || ${i:1:1} != ' ' ]] && st='31'
+    [[ "$st" = '31' || ${i:1:1} == 'M' ]] && st='31'
+    [[ "$ld" = '✗' || ${i:0:1} == 'D' || ${i:1:1} == 'D' ]] && ld='✗'
+    [[ "$dt" = '31' || ${i:1:1} != ' ' ]] && dt='31'
     [[ "$ln" = '?' || ${i:0:1} == 'A' || ${i:1:1} == '?' ]] && ln='?'
     [[ "$nt" = '31' || ${i:1:1} == '?' ]] && nt='31'
   done
 
   # Set prompt variable with git indicator
-  PS1="\[\e[33m\]$p\[\e[0;35m\][$br\[\e[0;32m\]$la\[\e[1;33m\]$lb\[\e[0m\]\[\e[1;${st}m\]$lc\[\e[1;${nt}m\]$ln\[\e[0;35m\]]\[\e[1;32m\]\$\[\e[0m\] "
+  PS1="\[\e[33m\]$p\[\e[0;35m\][$br\[\e[0;32m\]$la\[\e[1;33m\]$lb\[\e[0m\]\[\e[1;${st}m\]$lc\[\e[1;${nt}m\]$ln\[\e[1;${dt}m\]$ld\[\e[0;35m\]]\[\e[1;32m\]\$\[\e[0m\] "
 else
   # Set prompt variable without git indicator
   PS1="\[\e[33m\]$p\[\e[1;32m\]\$\[\e[0m\] "
