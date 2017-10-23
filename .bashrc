@@ -62,9 +62,11 @@ if [ -d "$HOME/Applications/node/bin" ] ; then
 fi
 
 # set PATH so it includes user's npm bin if it exists
-if [ -d "$HOME/npm/bin" ] ; then
-  PATH="$HOME/npm/bin:$PATH"
+if [ -d "$HOME/.npm-global/bin" ] ; then
+  PATH="$HOME/.npm-global/bin:$PATH"
 fi
+
+xset r rate 200 60
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -175,7 +177,7 @@ if [ ${#l} != '0' ]; then
   nt='36'
   dt='36'
   for i in "${l[@]:1}"; do
-    [[ "$lc" = '∂' || ${i:0:1} == 'M' || ${i:1:1} == 'M' ]] && lc='∂'
+    [[ "$lc" = '∂' || ${i:0:1} =~ [MRUC] || ${i:1:1} =~ [MRUC] ]] && lc='∂'
     [[ "$st" = '31' || ${i:1:1} == 'M' ]] && st='31'
     [[ "$ld" = '✗' || ${i:0:1} == 'D' || ${i:1:1} == 'D' ]] && ld='✗'
     [[ "$dt" = '31' || ${i:1:1} != ' ' ]] && dt='31'
@@ -225,3 +227,9 @@ cb() {
 
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Set TMOUT to disabled per usability requirements
+export TMOUT=0
