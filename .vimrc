@@ -2,7 +2,7 @@
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+set noexpandtab
 
 " Be smart when using tabs ;)
 set smarttab
@@ -10,6 +10,10 @@ set smarttab
 " 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
+
+" display tabs as periods and trailing whitespace as dot
+set list
+set listchars=tab:.\ ,trail:·
 
 " Linebreak on 500 characters
 set lbr
@@ -31,7 +35,7 @@ set nowb
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use ack for searching
-set grepprg=ack-grep\ -a
+set grepprg=ack\ -a
 
 " Always show current position
 set ruler
@@ -108,10 +112,11 @@ let NERDTreeQuitOnOpen=1
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Configs for Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Map Alt+b to use git-time-lapse
 map <C-L> :call TimeLapse()<CR>

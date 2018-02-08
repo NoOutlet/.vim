@@ -56,6 +56,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# set PATH so it includes maven bin if it exists
+if [ -d "$HOME/Applications/maven/bin" ] ; then
+  PATH="$HOME/Applications/maven/bin:$PATH"
+fi
+
 # set PATH so it includes node bin if it exists
 if [ -d "$HOME/Applications/node/bin" ] ; then
   PATH="$HOME/Applications/node/bin:$PATH"
@@ -67,6 +72,8 @@ if [ -d "$HOME/.npm-global/bin" ] ; then
 fi
 
 xset r rate 200 60
+
+tabs 2
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -230,6 +237,11 @@ function cbf() { cat "$1" | cb; }
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Java stuff
+export JAVA_HOME="/usr/java/jdk1.8.0_162"
+export JDK_HOME="/usr/java/jdk1.8.0_162"
+export JRE_HOME="/usr/java/jdk1.8.0_162/jre"
 
 # Set TMOUT to disabled per usability requirements
 export TMOUT=0
