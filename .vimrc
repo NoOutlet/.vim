@@ -111,23 +111,11 @@ let NERDTreeQuitOnOpen=1
 " Open NERDTree if not editing specific file
 autocmd vimenter * if !argc() | NERDTree | endif
 
-" Configs for Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Map Alt+b to use git-time-lapse
-map <C-L> :call TimeLapse()<CR>
-map <C-S> :tabclose<CR>
-
 " Map Ctrl+J and Ctrl+K to next/prev item in location list
 map <C-J> :lnext<CR>
 imap <C-J> <ESC>:lnext<CR>i
 map <C-K> :lprev<CR>
 imap <C-K> <ESC>:lprev<CR>i
-nnoremap <C-E> @q
 nnoremap <CR> :noh<CR><CR>
 
 " Let vim-airline take care of showing the mode
