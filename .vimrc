@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable filetype plugins
+filetype plugin indent on
+
 " Use spaces instead of tabs
 set noexpandtab
 
@@ -23,6 +26,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+:autocmd Filetype ruby set softtabstop=2
+:autocmd Filetype ruby set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,9 +98,6 @@ execute pathogen#infect()
 " Recognize syntax?
 syntax on
 
-" Enable filetype plugins
-filetype plugin indent on
-
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -122,3 +124,10 @@ nnoremap <CR> :noh<CR><CR>
 set noshowmode
 " Try showing airline symbols
 let g:airline_powerline_fonts = 1
+
+" Setup Linting
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']

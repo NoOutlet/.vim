@@ -20,7 +20,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # Use neovim or vim
-EDITOR='vi'
+EDITOR="vi"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
