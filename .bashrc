@@ -71,10 +71,6 @@ if [ -d "$HOME/.npm-global/bin" ] ; then
   PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
-xset r rate 200 60
-
-tabs 2
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -123,9 +119,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls -G'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias vi='nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -150,6 +148,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+test -f ~/.git-completion.bash && . $_
 
 # Functions
 # ---------
@@ -235,13 +235,6 @@ cb() {
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Java stuff
-export JAVA_HOME="/usr/java/jdk1.8.0_162"
-export JDK_HOME="/usr/java/jdk1.8.0_162"
-export JRE_HOME="/usr/java/jdk1.8.0_162/jre"
-
-# Set TMOUT to disabled per usability requirements
-export TMOUT=0
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
