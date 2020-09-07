@@ -4,8 +4,8 @@
 " Enable filetype plugins
 filetype plugin indent on
 
-" Use spaces instead of tabs
-set noexpandtab
+" Use tab instead of spaces
+set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
@@ -26,8 +26,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-:autocmd Filetype ruby set softtabstop=2
-:autocmd Filetype ruby set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -131,3 +129,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
+:autocmd Filetype ruby set softtabstop=2
+:autocmd Filetype ruby set expandtab
+:autocmd FileType html set shiftwidth=2 softtabstop=2 expandtab nosmarttab
+:autocmd FileType vue syntax sync fromstart
